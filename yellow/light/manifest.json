@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "Yellow - Light",
+  "author": "Mozilla",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "light"
+    },
+    "colors": {
+      "icons": "oklch(0.51 0.25 90)",
+      "icons_attention": "oklch(0.51 0.25 90)",
+      "tab_background_text": "oklch(0.34 0.19 90)",
+      "tab_text": "oklch(0.51 0.25 90)",
+      "tab_selected": "white",
+      "tab_line": "oklch(0.79 0.22 90)",
+      "tab_loading": "oklch(0.27 0.15 90)",
+      "frame": "oklch(0.93 0.10 90)",
+      "frame_inactive": "oklch(from oklch(0.93 0.10 90) 0.85 c h)",
+      "popup": "white",
+      "popup_text": "oklch(0.51 0.25 90)",
+      "popup_border": "oklch(0.72 0.24 90)",
+      "popup_highlight": "oklch(0.93 0.10 90)",
+      "popup_highlight_text": "oklch(0.20 0.10 90)",
+      "toolbar": "oklch(0.97 0.05 90)",
+      "toolbar_text": "oklch(0.51 0.25 90)",
+      "toolbar_field": "white",
+      "toolbar_field_border": "oklch(0.79 0.22 90)",
+      "toolbar_field_border_focus": "oklch(0.58 0.26 90)",
+      "toolbar_field_focus": "white",
+      "toolbar_field_text": "oklch(0.51 0.25 90)",
+      "toolbar_top_separator": "oklch(0.86 0.14 90)",
+      "toolbar_bottom_separator": "oklch(0.86 0.14 90)",
+      "ntp_background": "oklch(0.97 0.05 90)",
+      "ntp_card_background": "white",
+      "ntp_text": "oklch(0.27 0.15 90)",
+      "sidebar": "white",
+      "sidebar_border": "oklch(0.72 0.24 90)",
+      "sidebar_text": "oklch(0.51 0.25 90)",
+      "sidebar_highlight": "oklch(0.93 0.10 90)"
+    }
+  }
+}

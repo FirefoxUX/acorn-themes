@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Violet - Dark",
+  "author": "Mozilla",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "dark"
+    },
+    "colors": {
+      "icons": "oklch(0.83 0.17 290)",
+      "icons_attention": "oklch(0.83 0.17 290)",
+      "tab_background_text": "oklch(0.90 0.10 290)",
+      "tab_text": "oklch(0.97 0.05 290)",
+      "tab_selected": "oklch(0.34 0.14 290)",
+      "tab_line": "oklch(0.41 0.17 290)",
+      "tab_loading": "oklch(0.90 0.10 290)",
+      "frame": "oklch(0.20 0.05 290)",
+      "frame_inactive" : "oklch(from oklch(0.20 0.05 290) 0.25 c h)",
+      "popup": "oklch(0.20 0 0)",
+      "popup_text": "oklch(0.83 0.17 290)",
+      "popup_border": "oklch(0.41 0.17 290)",
+      "popup_highlight": "oklch(0.41 0.17 290)",
+      "popup_highlight_text": "oklch(0.97 0.05 290)",
+      "toolbar": "oklch(0.27 0.10 290)",
+      "toolbar_text": "oklch(0.90 0.10 290)",
+      "toolbar_field": "oklch(0.20 0 0)",
+      "toolbar_field_border": "oklch(0.41 0.17 290)",
+      "toolbar_field_border_focus": "oklch(0.62 0.24 290)",
+      "toolbar_field_focus": "oklch(0.20 0 0)",
+      "toolbar_field_text": "oklch(0.83 0.17 290)",
+      "toolbar_top_separator": "oklch(0.41 0.17 290)",
+      "toolbar_bottom_separator": "oklch(0.48 0.20 290)",
+      "ntp_background": "oklch(0.27 0.10 290)",
+      "ntp_card_background": "oklch(0.20 0 0)",
+      "ntp_text": "oklch(0.90 0.10 290)",
+      "sidebar": "oklch(0.20 0 0)",
+      "sidebar_border": "oklch(0.41 0.17 290)",
+      "sidebar_text": "oklch(0.83 0.17 290)",
+      "sidebar_highlight": "oklch(0.41 0.17 290)"
+    }
+  }
+}
+
+

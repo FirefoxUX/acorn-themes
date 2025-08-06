@@ -1,0 +1,163 @@
+{
+  "manifest_version": 2,
+  "name": "Green - Dark",
+  "author": "Mozilla",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "dark"
+    },
+    "colors": {
+      "icons": [
+        138,
+        223,
+        141
+      ],
+      "icons_attention": [
+        138,
+        223,
+        141
+      ],
+      "tab_background_text": [
+        181,
+        240,
+        181
+      ],
+      "tab_text": [
+        225,
+        255,
+        225
+      ],
+      "tab_selected": [
+        0,
+        72,
+        0
+      ],
+      "tab_line": [
+        0,
+        95,
+        0
+      ],
+      "tab_loading": [
+        181,
+        240,
+        181
+      ],
+      "frame": [
+        5,
+        28,
+        7
+      ],
+      "frame_inactive": [
+        5,
+        28,
+        7
+      ],
+      "popup": [
+        22,
+        22,
+        22
+      ],
+      "popup_text": [
+        138,
+        223,
+        141
+      ],
+      "popup_border": [
+        0,
+        95,
+        0
+      ],
+      "popup_highlight": [
+        0,
+        95,
+        0
+      ],
+      "popup_highlight_text": [
+        225,
+        255,
+        225
+      ],
+      "toolbar": [
+        0,
+        50,
+        0
+      ],
+      "toolbar_text": [
+        181,
+        240,
+        181
+      ],
+      "toolbar_field": [
+        22,
+        22,
+        22
+      ],
+      "toolbar_field_border": [
+        0,
+        72,
+        0
+      ],
+      "toolbar_field_border_focus": [
+        0,
+        164,
+        28
+      ],
+      "toolbar_field_focus": [
+        22,
+        22,
+        22
+      ],
+      "toolbar_field_text": [
+        138,
+        223,
+        141
+      ],
+      "toolbar_top_separator": [
+        0,
+        72,
+        0
+      ],
+      "toolbar_bottom_separator": [
+        0,
+        95,
+        0
+      ],
+      "ntp_background": [
+        0,
+        50,
+        0
+      ],
+      "ntp_card_background": [
+        22,
+        22,
+        22
+      ],
+      "ntp_text": [
+        181,
+        240,
+        181
+      ],
+      "sidebar": [
+        22,
+        22,
+        22
+      ],
+      "sidebar_border": [
+        0,
+        95,
+        0
+      ],
+      "sidebar_text": [
+        138,
+        223,
+        141
+      ],
+      "sidebar_highlight": [
+        0,
+        95,
+        0
+      ]
+    }
+  }
+}

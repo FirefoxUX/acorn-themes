@@ -1,0 +1,162 @@
+{
+  "manifest_version": 2,
+  "name": "Pink - Light",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "light"
+    },
+    "colors": {
+      "icons": [
+        173,
+        0,
+        89
+      ],
+      "icons_attention": [
+        173,
+        0,
+        89
+      ],
+      "tab_background_text": [
+        107,
+        0,
+        53
+      ],
+      "tab_text": [
+        173,
+        0,
+        89
+      ],
+      "tab_selected": [
+        255,
+        255,
+        255
+      ],
+      "tab_line": [
+        255,
+        126,
+        173
+      ],
+      "tab_loading": [
+        73,
+        6,
+        36
+      ],
+      "frame": [
+        255,
+        194,
+        219
+      ],
+      "frame_inactive": [
+        255,
+        194,
+        219
+      ],
+      "popup": [
+        255,
+        255,
+        255
+      ],
+      "popup_text": [
+        173,
+        0,
+        89
+      ],
+      "popup_border": [
+        244,
+        94,
+        150
+      ],
+      "popup_highlight": [
+        255,
+        194,
+        219
+      ],
+      "popup_highlight_text": [
+        39,
+        11,
+        21
+      ],
+      "toolbar": [
+        255,
+        232,
+        244
+      ],
+      "toolbar_text": [
+        173,
+        0,
+        89
+      ],
+      "toolbar_field": [
+        255,
+        255,
+        255
+      ],
+      "toolbar_field_border": [
+        255,
+        126,
+        173
+      ],
+      "toolbar_field_border_focus": [
+        201,
+        26,
+        109
+      ],
+      "toolbar_field_focus": [
+        255,
+        255,
+        255
+      ],
+      "toolbar_field_text": [
+        173,
+        0,
+        89
+      ],
+      "toolbar_top_separator": [
+        255,
+        126,
+        173
+      ],
+      "toolbar_bottom_separator": [
+        255,
+        126,
+        173
+      ],
+      "ntp_background": [
+        255,
+        232,
+        244
+      ],
+      "ntp_card_background": [
+        255,
+        255,
+        255
+      ],
+      "ntp_text": [
+        73,
+        6,
+        36
+      ],
+      "sidebar": [
+        255,
+        255,
+        255
+      ],
+      "sidebar_border": [
+        244,
+        94,
+        150
+      ],
+      "sidebar_text": [
+        173,
+        0,
+        89
+      ],
+      "sidebar_highlight": [
+        255,
+        194,
+        219
+      ]
+    }
+  }
+}

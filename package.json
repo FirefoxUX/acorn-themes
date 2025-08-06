@@ -1,0 +1,16 @@
+{
+  "name": "acorn-themes",
+  "version": "1.0.0",
+  "description": "Firefox themes based off of Acorn's [color palette](https://acorn.firefox.com/latest/desktop/styles/color/semantic-color-14S4X1uo)",
+  "main": "convert_oklch_to_rgb.js",
+  "scripts": {
+    "convert": "node convert_oklch_to_rgb.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chroma-js": "^3.1.2"
+  }
+}

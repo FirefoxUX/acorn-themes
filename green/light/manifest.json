@@ -7,7 +7,7 @@
       "color_scheme": "light"
     },
     "colors": {
-      "icons": "oklch(0.48.20 145)",
+      "icons": "oklch(0.48 0.20 145)",
       "icons_attention": "oklch(0.48 0.20 145)",
       "tab_background_text": "oklch(0.34 0.14 145)",
       "tab_text": "oklch(0.48 0.20 145)",
@@ -28,8 +28,8 @@
       "toolbar_field_border_focus": "oklch(0.55 0.21 145)",
       "toolbar_field_focus": "white",
       "toolbar_field_text": "oklch(0.48 0.20 145)",
-      "toolbar_top_separator": "oklch(0.83 0.14 145)",
-      "toolbar_bottom_separator": "oklch(0.83 0.14 145)",
+      "toolbar_top_separator": "oklch(0.76 0.17 145)",
+      "toolbar_bottom_separator": "oklch(0.76 0.17 145)",
       "ntp_background": "oklch(0.97 0.05 145)",
       "ntp_card_background": "white",
       "ntp_text": "oklch(0.27 0.10 145)",

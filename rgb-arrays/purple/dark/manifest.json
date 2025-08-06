@@ -1,0 +1,163 @@
+{
+  "manifest_version": 2,
+  "name": "Purple - Dark",
+  "author": "Mozilla",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "dark"
+    },
+    "colors": {
+      "icons": [
+        240,
+        163,
+        255
+      ],
+      "icons_attention": [
+        240,
+        163,
+        255
+      ],
+      "tab_background_text": [
+        247,
+        202,
+        255
+      ],
+      "tab_text": [
+        255,
+        236,
+        255
+      ],
+      "tab_selected": [
+        82,
+        21,
+        104
+      ],
+      "tab_line": [
+        107,
+        30,
+        135
+      ],
+      "tab_loading": [
+        247,
+        202,
+        255
+      ],
+      "frame": [
+        30,
+        14,
+        37
+      ],
+      "frame_inactive": [
+        30,
+        14,
+        37
+      ],
+      "popup": [
+        22,
+        22,
+        22
+      ],
+      "popup_text": [
+        240,
+        163,
+        255
+      ],
+      "popup_border": [
+        107,
+        30,
+        135
+      ],
+      "popup_highlight": [
+        107,
+        30,
+        135
+      ],
+      "popup_highlight_text": [
+        255,
+        236,
+        255
+      ],
+      "toolbar": [
+        56,
+        17,
+        71
+      ],
+      "toolbar_text": [
+        247,
+        202,
+        255
+      ],
+      "toolbar_field": [
+        22,
+        22,
+        22
+      ],
+      "toolbar_field_border": [
+        82,
+        21,
+        104
+      ],
+      "toolbar_field_border_focus": [
+        180,
+        83,
+        219
+      ],
+      "toolbar_field_focus": [
+        22,
+        22,
+        22
+      ],
+      "toolbar_field_text": [
+        240,
+        163,
+        255
+      ],
+      "toolbar_top_separator": [
+        82,
+        21,
+        104
+      ],
+      "toolbar_bottom_separator": [
+        107,
+        30,
+        135
+      ],
+      "ntp_background": [
+        56,
+        17,
+        71
+      ],
+      "ntp_card_background": [
+        22,
+        22,
+        22
+      ],
+      "ntp_text": [
+        247,
+        202,
+        255
+      ],
+      "sidebar": [
+        22,
+        22,
+        22
+      ],
+      "sidebar_border": [
+        107,
+        30,
+        135
+      ],
+      "sidebar_text": [
+        240,
+        163,
+        255
+      ],
+      "sidebar_highlight": [
+        107,
+        30,
+        135
+      ]
+    }
+  }
+}

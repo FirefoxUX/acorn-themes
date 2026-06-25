@@ -3,9 +3,6 @@
   "name": "Cyan",
   "version": "1.0",
   "theme": {
-    "properties": {
-      "color_scheme": "light"
-    },
     "colors": {
       "icons": "oklch(0.48 0.20 205)",
       "icons_attention": "oklch(0.48 0.20 205)",
@@ -40,9 +37,6 @@
     }
   },
   "dark_theme": {
-    "properties": {
-      "color_scheme": "dark"
-    },
     "colors": {
       "icons": "oklch(0.83 0.11 205)",
       "icons_attention": "oklch(0.83 0.11 205)",

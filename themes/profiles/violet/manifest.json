@@ -3,9 +3,6 @@
   "name": "Violet",
   "version": "1.0",
   "theme": {
-    "properties": {
-      "color_scheme": "light"
-    },
     "colors": {
       "icons": "oklch(0.48 0.20 290)",
       "icons_attention": "oklch(0.48 0.20 290)",
@@ -40,9 +37,6 @@
     }
   },
   "dark_theme": {
-    "properties": {
-      "color_scheme": "dark"
-    },
     "colors": {
       "icons": "oklch(0.83 0.17 290)",
       "icons_attention": "oklch(0.83 0.17 290)",

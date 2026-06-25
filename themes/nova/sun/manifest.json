@@ -46,8 +46,6 @@
       ]
     },
     "properties": {
-      "color_scheme": "light",
-      "content_color_scheme": "light",
       "additional_backgrounds_alignment": [
         "center"
       ],
@@ -86,10 +84,6 @@
       "button_background_hover": "#5F3100",
       "button_background_active": "#854800",
       "ntp_background": "#270F00"
-    },
-    "properties": {
-      "color_scheme": "dark",
-      "content_color_scheme": "dark"
     }
   }
 }

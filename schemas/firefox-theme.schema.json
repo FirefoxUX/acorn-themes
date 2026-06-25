@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://acorn-themes/schemas/firefox-theme.schema.json",
+  "$comment": "Hand-authored mirror of the WebExtension static-theme manifest shape. Upstream source of truth (in Mozilla WebExtensions schema format, NOT standard JSON Schema): mozilla-central/toolkit/components/extensions/schemas/theme.json. Re-sync when Firefox adds or removes theme color keys, theme properties values, or ThemeColor variants. Diff `definitions.themeColors.properties` against the upstream `ThemeType.colors.properties` block on each Firefox uplift.",
+  "title": "Firefox static-theme manifest",
+  "type": "object",
+  "required": ["manifest_version", "name", "version"],
+  "properties": {
+    "manifest_version": { "type": "integer", "enum": [2, 3] },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "author": { "type": "string" },
+    "default_locale": { "type": "string" },
+    "icons": {
+      "type": "object",
+      "patternProperties": {
+        "^[1-9][0-9]*$": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "theme": { "$ref": "#/$defs/themeType" },
+    "dark_theme": { "$ref": "#/$defs/themeType" },
+    "browser_specific_settings": {
+      "type": "object",
+      "properties": {
+        "gecko": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "strict_min_version": { "type": "string" },
+            "strict_max_version": { "type": "string" },
+            "update_url": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "themeColor": {
+      "$comment": "Mirrors upstream `ThemeColor` (theme.json lines 14-39) with one INTENTIONAL DIVERGENCE: the string variant is left as `{type: 'string'}` with no pattern. Source manifests in this repo author colors as `oklch(...)` / `oklch(from oklch(...) ...)`, which Firefox itself does not accept but which scripts/build.js resolves into RGB arrays before shipping. Do not tighten the string pattern without also reworking how sources are authored.",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "type": "integer", "minimum": 0, "maximum": 255 }
+        },
+        {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": { "type": "number" }
+        }
+      ]
+    },
+    "themeColors": {
+      "type": "object",
+      "properties": {
+        "tab_selected": { "$ref": "#/$defs/themeColor" },
+        "frame": { "$ref": "#/$defs/themeColor" },
+        "frame_inactive": { "$ref": "#/$defs/themeColor" },
+        "tab_background_text": { "$ref": "#/$defs/themeColor" },
+        "tab_background_separator": { "$ref": "#/$defs/themeColor" },
+        "tab_loading": { "$ref": "#/$defs/themeColor" },
+        "tab_text": { "$ref": "#/$defs/themeColor" },
+        "tab_line": { "$ref": "#/$defs/themeColor" },
+        "toolbar": { "$ref": "#/$defs/themeColor" },
+        "toolbar_text": { "$ref": "#/$defs/themeColor" },
+        "bookmark_text": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_text": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_border": { "$ref": "#/$defs/themeColor" },
+        "toolbar_top_separator": { "$ref": "#/$defs/themeColor" },
+        "toolbar_bottom_separator": { "$ref": "#/$defs/themeColor" },
+        "toolbar_vertical_separator": { "$ref": "#/$defs/themeColor" },
+        "icons": { "$ref": "#/$defs/themeColor" },
+        "icons_attention": { "$ref": "#/$defs/themeColor" },
+        "button_background_hover": { "$ref": "#/$defs/themeColor" },
+        "button_background_active": { "$ref": "#/$defs/themeColor" },
+        "popup": { "$ref": "#/$defs/themeColor" },
+        "popup_text": { "$ref": "#/$defs/themeColor" },
+        "popup_border": { "$ref": "#/$defs/themeColor" },
+        "popup_highlight": { "$ref": "#/$defs/themeColor" },
+        "popup_highlight_text": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_focus": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_text_focus": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_border_focus": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_highlight": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_highlight_text": { "$ref": "#/$defs/themeColor" },
+        "ntp_background": { "$ref": "#/$defs/themeColor" },
+        "ntp_card_background": { "$ref": "#/$defs/themeColor" },
+        "ntp_text": { "$ref": "#/$defs/themeColor" },
+        "sidebar": { "$ref": "#/$defs/themeColor" },
+        "sidebar_border": { "$ref": "#/$defs/themeColor" },
+        "sidebar_text": { "$ref": "#/$defs/themeColor" },
+        "sidebar_highlight": { "$ref": "#/$defs/themeColor" },
+        "sidebar_highlight_text": { "$ref": "#/$defs/themeColor" }
+      },
+      "$comment": "additionalProperties: false intentionally diverges from upstream (which allows any ThemeColor) so that typos in color key names fail CI. If Firefox adds a new color key, add it here in the same PR that uses it.",
+      "additionalProperties": false
+    },
+    "themeProperties": {
+      "type": "object",
+      "properties": {
+        "additional_backgrounds_alignment": {
+          "type": "array",
+          "maxItems": 15,
+          "items": {
+            "type": "string",
+            "enum": [
+              "bottom",
+              "center",
+              "left",
+              "right",
+              "top",
+              "center bottom",
+              "center center",
+              "center top",
+              "left bottom",
+              "left center",
+              "left top",
+              "right bottom",
+              "right center",
+              "right top"
+            ]
+          }
+        },
+        "additional_backgrounds_tiling": {
+          "type": "array",
+          "maxItems": 15,
+          "items": {
+            "type": "string",
+            "enum": ["no-repeat", "repeat", "repeat-x", "repeat-y"]
+          }
+        },
+        "additional_backgrounds_size": {
+          "type": "array",
+          "maxItems": 15,
+          "items": { "type": "string" }
+        },
+        "color_scheme": {
+          "type": "string",
+          "enum": ["auto", "light", "dark", "system"]
+        },
+        "content_color_scheme": {
+          "type": "string",
+          "enum": ["auto", "light", "dark", "system"]
+        }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "themeImages": {
+      "type": "object",
+      "properties": {
+        "additional_backgrounds": {
+          "type": "array",
+          "maxItems": 15,
+          "items": { "type": "string" }
+        },
+        "theme_frame": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "themeType": {
+      "type": "object",
+      "properties": {
+        "colors": { "$ref": "#/$defs/themeColors" },
+        "properties": { "$ref": "#/$defs/themeProperties" },
+        "images": { "$ref": "#/$defs/themeImages" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "manifest_version": 3,
+  "name": "Pink",
+  "version": "1.0",
+  "theme": {
+    "properties": {
+      "color_scheme": "light"
+    },
+    "colors": {
+      "icons": "oklch(0.48 0.20 360)",
+      "icons_attention": "oklch(0.48 0.20 360)",
+      "tab_background_text": "oklch(0.34 0.14 360)",
+      "tab_text": "oklch(0.48 0.20 360)",
+      "tab_selected": "white",
+      "tab_line": "oklch(0.76 0.17 360)",
+      "tab_loading": "oklch(0.27 0.10 360)",
+      "frame": "oklch(0.90 0.10 360)",
+      "frame_inactive": "oklch(from oklch(0.90 0.10 360) 0.85 c h)",
+      "popup": "white",
+      "popup_text": "oklch(0.48 0.20 360)",
+      "popup_border": "oklch(0.69 0.19 360)",
+      "popup_highlight": "oklch(0.90 0.10 360)",
+      "popup_highlight_text": "oklch(0.20 0.05 360)",
+      "toolbar": "oklch(0.97 0.05 360)",
+      "toolbar_text": "oklch(0.48 0.20 360)",
+      "toolbar_field": "white",
+      "toolbar_field_border": "oklch(0.76 0.17 360)",
+      "toolbar_field_border_focus": "oklch(0.55 0.21 360)",
+      "toolbar_field_focus": "white",
+      "toolbar_field_text": "oklch(0.48 0.20 360)",
+      "toolbar_top_separator": "oklch(0.76 0.17 360)",
+      "toolbar_bottom_separator": "oklch(0.76 0.17 360)",
+      "ntp_background": "oklch(0.97 0.05 360)",
+      "ntp_card_background": "white",
+      "ntp_text": "oklch(0.27 0.10 360)",
+      "sidebar": "white",
+      "sidebar_border": "oklch(0.69 0.19 360)",
+      "sidebar_text": "oklch(0.48 0.20 360)",
+      "sidebar_highlight": "oklch(0.90 0.10 360)"
+    }
+  },
+  "dark_theme": {
+    "properties": {
+      "color_scheme": "dark"
+    },
+    "colors": {
+      "icons": "oklch(0.83 0.17 360)",
+      "icons_attention": "oklch(0.83 0.17 360)",
+      "tab_background_text": "oklch(0.90 0.10 360)",
+      "tab_text": "oklch(0.97 0.05 360)",
+      "tab_selected": "oklch(0.34 0.14 360)",
+      "tab_line": "oklch(0.41 0.17 360)",
+      "tab_loading": "oklch(0.90 0.10 360)",
+      "frame": "oklch(0.20 0.05 360)",
+      "frame_inactive": "oklch(from oklch(0.20 0.05 360) 0.25 c h)",
+      "popup": "oklch(0.20 0 0)",
+      "popup_text": "oklch(0.83 0.17 360)",
+      "popup_border": "oklch(0.41 0.17 360)",
+      "popup_highlight": "oklch(0.41 0.17 360)",
+      "popup_highlight_text": "oklch(0.97 0.05 360)",
+      "toolbar": "oklch(0.27 0.10 360)",
+      "toolbar_text": "oklch(0.90 0.10 360)",
+      "toolbar_field": "oklch(0.20 0 0)",
+      "toolbar_field_border": "oklch(0.34 0.14 360)",
+      "toolbar_field_border_focus": "oklch(0.62 0.21 360)",
+      "toolbar_field_focus": "oklch(0.20 0 0)",
+      "toolbar_field_text": "oklch(0.83 0.17 360)",
+      "toolbar_top_separator": "oklch(0.34 0.14 360)",
+      "toolbar_bottom_separator": "oklch(0.41 0.17 360)",
+      "ntp_background": "oklch(0.27 0.10 360)",
+      "ntp_card_background": "oklch(0.20 0 0)",
+      "ntp_text": "oklch(0.90 0.10 360)",
+      "sidebar": "oklch(0.20 0 0)",
+      "sidebar_border": "oklch(0.41 0.17 360)",
+      "sidebar_text": "oklch(0.83 0.17 360)",
+      "sidebar_highlight": "oklch(0.41 0.17 360)"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{2b0fadbf-238d-43db-aa9d-e06c9a7e000b}"
+    }
+  }
+}

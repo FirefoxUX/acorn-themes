@@ -1,0 +1,53 @@
+name: "Themes"
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "themes/**"
+      - "schemas/**"
+      - "scripts/**"
+      - ".github/workflows/validate-themes.yaml"
+      - ".github/actions/post-feedback/**"
+      - "package.json"
+      - "package-lock.json"
+
+jobs:
+  validate:
+    runs-on: "ubuntu-latest"
+    name: "Manifest validation"
+    permissions:
+      contents: "read"
+      pull-requests: "write"
+      statuses: "write"
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Validate theme manifests
+        run: node scripts/validate.js
+        env:
+          FEEDBACK_PATH: ${{ runner.temp }}/theme-feedback.json
+
+      - name: Build smoke test
+        run: npm run build
+
+      - name: Post PR feedback
+        if: always() && github.event.pull_request.head.repo.full_name == github.repository
+        uses: ./.github/actions/post-feedback
+        with:
+          marker: "<!-- acorn-themes-bot:validate -->"
+          status_context: "Themes / manifest validation"
+          feedback_path: ${{ runner.temp }}/theme-feedback.json
+          outcome: ${{ job.status }}

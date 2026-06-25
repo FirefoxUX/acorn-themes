@@ -3,9 +3,6 @@
   "name": "Yellow",
   "version": "1.0",
   "theme": {
-    "properties": {
-      "color_scheme": "light"
-    },
     "colors": {
       "icons": "oklch(0.51 0.25 90)",
       "icons_attention": "oklch(0.51 0.25 90)",
@@ -40,9 +37,6 @@
     }
   },
   "dark_theme": {
-    "properties": {
-      "color_scheme": "dark"
-    },
     "colors": {
       "icons": "oklch(0.86 0.14 90)",
       "icons_attention": "oklch(0.86 0.14 90)",

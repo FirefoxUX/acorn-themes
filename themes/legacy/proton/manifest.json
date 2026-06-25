@@ -34,10 +34,6 @@
       "sidebar_border": "rgba(21, 20, 26, 0.1)",
       "ntp_background": "#f9f9fb",
       "ntp_text": "rgb(21, 20, 26)"
-    },
-    "properties": {
-      "color_scheme": "light",
-      "content_color_scheme": "light"
     }
   },
   "dark_theme": {
@@ -67,10 +63,6 @@
       "ntp_background": "rgb(43, 42, 51)",
       "ntp_card_background": "rgb(66, 65, 77)",
       "ntp_text": "rgb(251, 251, 254)"
-    },
-    "properties": {
-      "color_scheme": "dark",
-      "content_color_scheme": "dark"
     }
   }
 }

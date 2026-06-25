@@ -1,8 +1,8 @@
 name: "Post PR feedback"
 description: >-
   Upserts a sticky PR comment and writes a commit status from a JSON
-  feedback payload. Designed for icon-pipeline workflows where designers
-  need failures surfaced in the PR UI directly instead of the Actions tab.
+  feedback payload. Surfaces CI failures directly in the PR UI instead
+  of the Actions tab. Vendored from acorn-icons.
 
 inputs:
   marker:
@@ -36,7 +36,7 @@ runs:
   using: "composite"
   steps:
     - name: Upsert sticky comment and commit status
-      uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+      uses: actions/github-script@d746ffe35508b1917358783b479e04febd2b8f71 # v9.0.0
       env:
         FEEDBACK_PATH: ${{ inputs.feedback_path }}
         MARKER: ${{ inputs.marker }}
@@ -88,9 +88,9 @@ runs:
           const existing = comments.find((c) => c.body && c.body.includes(marker))
 
           if (isFailure) {
-            const title = payload?.title ?? 'Icon CI failed unexpectedly'
+            const title = payload?.title ?? 'CI failed unexpectedly'
             const body = payload?.body
-              ?? 'An icon check failed before it could report details. See the workflow logs for the full error.'
+              ?? 'A check failed before it could report details. See the workflow logs for the full error.'
 
             const commentBody = [
               marker,
@@ -125,11 +125,11 @@ runs:
             description = truncate(
               payload?.summary
                 ?? payload?.title
-                ?? 'Icon CI failed — see the PR comment for details.',
+                ?? 'CI failed. See the PR comment for details.',
             )
             state = 'failure'
           } else {
-            description = 'All icon checks passed.'
+            description = 'All checks passed.'
             state = 'success'
           }
 

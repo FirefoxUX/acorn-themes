@@ -75,6 +75,7 @@
         "toolbar_field": { "$ref": "#/$defs/themeColor" },
         "toolbar_field_text": { "$ref": "#/$defs/themeColor" },
         "toolbar_field_border": { "$ref": "#/$defs/themeColor" },
+        "toolbar_field_separator": { "$ref": "#/$defs/themeColor" },
         "toolbar_top_separator": { "$ref": "#/$defs/themeColor" },
         "toolbar_bottom_separator": { "$ref": "#/$defs/themeColor" },
         "toolbar_vertical_separator": { "$ref": "#/$defs/themeColor" },
@@ -154,15 +155,43 @@
       },
       "additionalProperties": { "type": "string" }
     },
+    "themeCSSGradient": {
+      "$comment": "Mirrors upstream ThemeCSSGradient (theme.json lines 72-111). Each variant is an object with exactly one of the gradient keys set to a CSS gradient argument string.",
+      "type": "object",
+      "oneOf": [
+        { "required": ["linear-gradient"] },
+        { "required": ["radial-gradient"] },
+        { "required": ["conic-gradient"] },
+        { "required": ["repeating-linear-gradient"] },
+        { "required": ["repeating-radial-gradient"] },
+        { "required": ["repeating-conic-gradient"] }
+      ],
+      "properties": {
+        "linear-gradient": { "type": "string" },
+        "radial-gradient": { "type": "string" },
+        "conic-gradient": { "type": "string" },
+        "repeating-linear-gradient": { "type": "string" },
+        "repeating-radial-gradient": { "type": "string" },
+        "repeating-conic-gradient": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "themeBackground": {
+      "$comment": "Mirrors upstream ThemeBackground: either an extension-relative image URL (string) or a ThemeCSSGradient object.",
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/themeCSSGradient" }
+      ]
+    },
     "themeImages": {
       "type": "object",
       "properties": {
         "additional_backgrounds": {
           "type": "array",
           "maxItems": 15,
-          "items": { "type": "string" }
+          "items": { "$ref": "#/$defs/themeBackground" }
         },
-        "theme_frame": { "type": "string" }
+        "theme_frame": { "$ref": "#/$defs/themeBackground" }
       },
       "additionalProperties": { "type": "string" }
     },

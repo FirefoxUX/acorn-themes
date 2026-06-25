@@ -1,0 +1,111 @@
+{
+  "manifest_version": 3,
+  "name": "Lagoon",
+  "version": "1.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nova-lagoon@mozilla.org"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "#ECF3F8",
+      "frame_inactive": "#D8DFE4",
+      "toolbar": "#FFFFFF",
+      "toolbar_text": "#111524",
+      "icons": "#23327B",
+      "icons_attention": "#5A87FD",
+      "toolbar_top_separator": "#00000000",
+      "toolbar_bottom_separator": "#A2D3FF",
+      "toolbar_vertical_separator": "#A2D3FF",
+      "tab_selected": "#FFFFFF",
+      "tab_text": "#111524",
+      "tab_background_text": "#111524",
+      "tab_line": "#7BB2FF",
+      "tab_loading": "#7BB2FF",
+      "tab_background_separator": "#00000029",
+      "toolbar_field": "#FFFFFF",
+      "toolbar_field_text": "#111524",
+      "toolbar_field_border": "#00000024",
+      "toolbar_field_focus": "#FFFFFF",
+      "toolbar_field_text_focus": "#111524",
+      "toolbar_field_separator": "#00000029",
+      "sidebar": "#FFFFFF",
+      "sidebar_text": "#111524",
+      "sidebar_border": "#A2D3FF",
+      "sidebar_highlight": "#C5EAFE",
+      "button_background_hover": "#C5EAFE",
+      "button_background_active": "#A2D3FF",
+      "ntp_background": "#ECF3F8"
+    },
+    "images": {
+      "additional_backgrounds": [
+        {
+          "linear-gradient": "135deg, #ECF3F8 0%, #C5EAFE 60%, #A2D3FF 100%"
+        }
+      ]
+    },
+    "properties": {
+      "color_scheme": "light",
+      "content_color_scheme": "light",
+      "additional_backgrounds_alignment": [
+        "center"
+      ],
+      "additional_backgrounds_tiling": [
+        "no-repeat"
+      ],
+      "additional_backgrounds_size": [
+        "auto"
+      ]
+    }
+  },
+  "dark_theme": {
+    "colors": {
+      "frame": "#111524",
+      "frame_inactive": "#050816",
+      "toolbar": "#1D1B1F",
+      "toolbar_text": "#ECF3F8",
+      "icons": "#ECF3F8",
+      "icons_attention": "#A2D3FF",
+      "toolbar_bottom_separator": "#17214C",
+      "toolbar_vertical_separator": "#17214C",
+      "tab_selected": "#1D1B1F",
+      "tab_text": "#ECF3F8",
+      "tab_background_text": "#ECF3F8",
+      "tab_line": "#3246B0",
+      "tab_loading": "#3246B0",
+      "toolbar_field": "#1D1B1F",
+      "toolbar_field_text": "#ECF3F8",
+      "toolbar_field_border": "#3F3E42",
+      "toolbar_field_focus": "#272429",
+      "toolbar_field_text_focus": "#ECF3F8",
+      "sidebar": "#1D1B1F",
+      "sidebar_text": "#ECF3F8",
+      "sidebar_border": "#17214C",
+      "sidebar_highlight": "#3246B0",
+      "button_background_hover": "#3246B0",
+      "button_background_active": "#455FE7",
+      "ntp_background": "#111524"
+    },
+    "images": {
+      "additional_backgrounds": [
+        {
+          "linear-gradient": "135deg, #23327B 0%, #17214C 60%, #111524 100%"
+        }
+      ]
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark",
+      "additional_backgrounds_alignment": [
+        "center"
+      ],
+      "additional_backgrounds_tiling": [
+        "no-repeat"
+      ],
+      "additional_backgrounds_size": [
+        "auto"
+      ]
+    }
+  }
+}

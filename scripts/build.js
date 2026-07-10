@@ -106,6 +106,16 @@ function buildManifest(manifest) {
     return out;
 }
 
+function addStrictMinVersion(manifest, minVersion) {
+    if (typeof manifest?.browser_specific_settings?.gecko?.strict_min_version !== 'undefined') {
+        return;
+    }
+
+    const out = structuredClone(manifest);
+    out.browser_specific_settings.gecko.strict_min_version = minVersion;
+    return out;
+}
+
 function main() {
     const manifests = findThemeManifests(THEMES_DIR);
     if (manifests.length === 0) {
@@ -117,7 +127,10 @@ function main() {
     for (const { collection, theme, sourcePath } of manifests) {
         const relative = path.join(collection, theme, 'manifest.json');
         console.log(`  ${relative}`);
-        const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+        let source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+        if (collection === 'nova') {
+            source = addStrictMinVersion(source, '153.0');
+        }
         const built = buildManifest(source);
         const destPath = path.join(DIST_DIR, relative);
         fs.mkdirSync(path.dirname(destPath), { recursive: true });

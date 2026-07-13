@@ -49,26 +49,34 @@ jobs:
         env:
           VERSION: ${{ inputs.version }}
         run: |
-          mkdir -p artifacts
+          mkdir -p xpis artifacts
           for dir in dist/*/*/; do
             if [ -f "$dir/manifest.json" ]; then
               collection=$(basename "$(dirname "$dir")")
               theme=$(basename "$dir")
+              mkdir -p "xpis/${collection}"
               (
                 cd "$dir"
                 jq --arg v "$VERSION" '.version = $v' manifest.json > manifest.json.tmp
                 mv manifest.json.tmp manifest.json
-                zip -qr "${GITHUB_WORKSPACE}/artifacts/${collection}-${theme}-${VERSION}.xpi" .
+                zip -qr "${GITHUB_WORKSPACE}/xpis/${collection}/${theme}-${VERSION}.xpi" .
               )
             fi
+          done
+          for collection_dir in xpis/*/; do
+            collection=$(basename "$collection_dir")
+            (
+              cd "$collection_dir"
+              zip -qr "${GITHUB_WORKSPACE}/artifacts/${collection}-${VERSION}.zip" .
+            )
           done
           ls -la artifacts
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b # v3.0.1
         with:
           tag_name: v${{ inputs.version }}
           name: v${{ inputs.version }}
           target_commitish: ${{ github.sha }}
-          files: artifacts/*.xpi
+          files: artifacts/*.zip
           fail_on_unmatched_files: true

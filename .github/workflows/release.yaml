@@ -1,0 +1,74 @@
+name: "Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, e.g. 1.1.0"
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: "ubuntu-latest"
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: "write"
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Validate version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid version '$VERSION'. Must match x.y.z"
+            exit 1
+          fi
+          if gh api "repos/${{ github.repository }}/git/refs/tags/v$VERSION" --silent >/dev/null 2>&1; then
+            echo "Tag v$VERSION already exists"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build themes
+        run: npm run build
+
+      - name: Package .xpi files
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          mkdir -p artifacts
+          for dir in dist/*/*/; do
+            if [ -f "$dir/manifest.json" ]; then
+              collection=$(basename "$(dirname "$dir")")
+              theme=$(basename "$dir")
+              (
+                cd "$dir"
+                jq --arg v "$VERSION" '.version = $v' manifest.json > manifest.json.tmp
+                mv manifest.json.tmp manifest.json
+                zip -qr "${GITHUB_WORKSPACE}/artifacts/${collection}-${theme}-${VERSION}.xpi" .
+              )
+            fi
+          done
+          ls -la artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+        with:
+          tag_name: v${{ inputs.version }}
+          name: v${{ inputs.version }}
+          target_commitish: ${{ github.sha }}
+          files: artifacts/*.xpi
+          fail_on_unmatched_files: true

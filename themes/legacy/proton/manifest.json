@@ -9,8 +9,8 @@
   },
   "theme": {
     "colors": {
-      "frame": "#F6F6FB",
-      "frame_inactive": "#E2E2E7",
+      "frame": "rgb(234, 234, 237)",
+      "frame_inactive": "rgb(240, 240, 244)",
       "toolbar": "#f9f9fb",
       "toolbar_text": "rgb(21, 20, 26)",
       "icons": "rgb(91, 91, 102)",
@@ -19,7 +19,7 @@
       "tab_selected": "#ffffff",
       "tab_text": "rgb(21, 20, 26)",
       "tab_background_text": "rgb(21, 20, 26)",
-      "tab_line": "transparent",
+      "tab_line": "#B7B6BA",
       "toolbar_field": "rgba(0, 0, 0, 0.05)",
       "toolbar_field_text": "rgb(21, 20, 26)",
       "toolbar_field_border": "transparent",
@@ -38,8 +38,8 @@
   },
   "dark_theme": {
     "colors": {
-      "frame": "#110F17",
-      "frame_inactive": "#05040A",
+      "frame": "rgb(28, 27, 34)",
+      "frame_inactive": "rgb(31, 30, 37)",
       "toolbar": "rgb(43, 42, 51)",
       "toolbar_text": "rgb(251, 251, 254)",
       "icons": "rgb(251, 251, 254)",
@@ -48,7 +48,7 @@
       "tab_selected": "rgba(106, 106, 120, 0.7)",
       "tab_text": "rgb(255, 255, 255)",
       "tab_background_text": "#fbfbfe",
-      "tab_line": "transparent",
+      "tab_line": "#312F33",
       "toolbar_field": "rgba(0, 0, 0, 0.3)",
       "toolbar_field_text": "rgb(251, 251, 254)",
       "toolbar_field_border": "transparent",

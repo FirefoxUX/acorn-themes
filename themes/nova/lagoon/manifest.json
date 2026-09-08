@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lagoon",
-  "version": "1.0",
+  "version": "1.1",
   "browser_specific_settings": {
     "gecko": {
       "id": "nova-lagoon@mozilla.org"
@@ -11,13 +11,13 @@
     "colors": {
       "frame": "#ECF3F8",
       "frame_inactive": "#D8DFE4",
-      "toolbar": "#FFFFFF",
+      "toolbar": "#FFFFFF66",
       "toolbar_text": "#111524",
       "icons": "#23327B",
       "icons_attention": "#5A87FD",
       "toolbar_top_separator": "#00000000",
-      "toolbar_bottom_separator": "#A2D3FF",
-      "toolbar_vertical_separator": "#A2D3FF",
+      "toolbar_bottom_separator": "#C5EAFE",
+      "toolbar_vertical_separator": "#C5EAFE",
       "tab_selected": "#FFFFFF",
       "tab_text": "#111524",
       "tab_background_text": "#111524",
@@ -29,11 +29,11 @@
       "toolbar_field_border": "#00000024",
       "toolbar_field_focus": "#FFFFFF",
       "toolbar_field_text_focus": "#111524",
-      "toolbar_field_separator": "#00000029",
+      "popup_highlight": "#5A87FD",
+      "popup_highlight_text": "#FFFFFF",
       "sidebar": "#FFFFFF",
       "sidebar_text": "#111524",
-      "sidebar_border": "#A2D3FF",
-      "sidebar_highlight": "#C5EAFE",
+      "sidebar_border": "#C5EAFE",
       "button_background_hover": "#C5EAFE",
       "button_background_active": "#A2D3FF",
       "ntp_background": "#ECF3F8"
@@ -46,41 +46,40 @@
       ]
     },
     "properties": {
-      "additional_backgrounds_alignment": [
-        "center"
-      ],
       "additional_backgrounds_tiling": [
         "no-repeat"
       ],
       "additional_backgrounds_size": [
         "auto"
-      ]
+      ],
+      "backgrounds_area": "window"
     }
   },
   "dark_theme": {
     "colors": {
       "frame": "#111524",
       "frame_inactive": "#050816",
-      "toolbar": "#1D1B1F",
+      "toolbar": "#00000033",
       "toolbar_text": "#ECF3F8",
       "icons": "#ECF3F8",
-      "icons_attention": "#A2D3FF",
-      "toolbar_bottom_separator": "#17214C",
-      "toolbar_vertical_separator": "#17214C",
-      "tab_selected": "#1D1B1F",
+      "icons_attention": "#5A87FD",
+      "toolbar_bottom_separator": "#23327B",
+      "toolbar_vertical_separator": "#23327B",
+      "tab_selected": "#111524",
       "tab_text": "#ECF3F8",
       "tab_background_text": "#ECF3F8",
       "tab_line": "#3246B0",
       "tab_loading": "#3246B0",
-      "toolbar_field": "#1D1B1F",
+      "toolbar_field": "#111524",
       "toolbar_field_text": "#ECF3F8",
-      "toolbar_field_border": "#3F3E42",
+      "toolbar_field_border": "#23327B",
       "toolbar_field_focus": "#272429",
       "toolbar_field_text_focus": "#ECF3F8",
-      "sidebar": "#1D1B1F",
+      "popup_highlight": "#455FE7",
+      "popup_highlight_text": "#FFFFFF",
+      "sidebar": "#111524",
       "sidebar_text": "#ECF3F8",
-      "sidebar_border": "#17214C",
-      "sidebar_highlight": "#3246B0",
+      "sidebar_border": "#23327B",
       "button_background_hover": "#3246B0",
       "button_background_active": "#455FE7",
       "ntp_background": "#111524"
@@ -93,15 +92,13 @@
       ]
     },
     "properties": {
-      "additional_backgrounds_alignment": [
-        "center"
-      ],
       "additional_backgrounds_tiling": [
         "no-repeat"
       ],
       "additional_backgrounds_size": [
         "auto"
-      ]
+      ],
+      "backgrounds_area": "window"
     }
   }
 }

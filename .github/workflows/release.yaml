@@ -1,12 +1,7 @@
 name: "Release"
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Release version, e.g. 1.1.0"
-        required: true
-        type: string
+  workflow_dispatch: {}
 
 jobs:
   release:
@@ -25,19 +20,20 @@ jobs:
           node-version: "24"
           cache: "npm"
 
-      - name: Validate version
+      - name: Compute release tag
+        id: release_tag
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ inputs.version }}
         run: |
-          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Invalid version '$VERSION'. Must match x.y.z"
-            exit 1
-          fi
-          if gh api "repos/${{ github.repository }}/git/refs/tags/v$VERSION" --silent >/dev/null 2>&1; then
-            echo "Tag v$VERSION already exists"
-            exit 1
-          fi
+          base="release-$(date -u +%Y-%m-%d)"
+          tag="$base"
+          suffix=1
+          while gh api "repos/${{ github.repository }}/git/refs/tags/$tag" --silent >/dev/null 2>&1; do
+            suffix=$((suffix + 1))
+            tag="${base}-${suffix}"
+          done
+          echo "Using release tag: $tag"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -47,36 +43,42 @@ jobs:
 
       - name: Package .xpi files
         env:
-          VERSION: ${{ inputs.version }}
+          RELEASE_TAG: ${{ steps.release_tag.outputs.tag }}
         run: |
           mkdir -p xpis artifacts
           for dir in dist/*/*/; do
             if [ -f "$dir/manifest.json" ]; then
               collection=$(basename "$(dirname "$dir")")
               theme=$(basename "$dir")
+              theme_version=$(jq -r '.version' "$dir/manifest.json")
               mkdir -p "xpis/${collection}"
               (
                 cd "$dir"
-                jq --arg v "$VERSION" '.version = $v' manifest.json > manifest.json.tmp
-                mv manifest.json.tmp manifest.json
-                zip -qr "${GITHUB_WORKSPACE}/xpis/${collection}/${theme}-${VERSION}.xpi" .
+                zip -qr "${GITHUB_WORKSPACE}/xpis/${collection}/${theme}-${theme_version}.xpi" .
               )
             fi
           done
+          # Collections with a single theme ship that .xpi directly; collections
+          # with multiple themes are bundled into one zip per collection.
           for collection_dir in xpis/*/; do
             collection=$(basename "$collection_dir")
-            (
-              cd "$collection_dir"
-              zip -qr "${GITHUB_WORKSPACE}/artifacts/${collection}-${VERSION}.zip" .
-            )
+            xpi_count=$(find "$collection_dir" -maxdepth 1 -name '*.xpi' | wc -l)
+            if [ "$xpi_count" -eq 1 ]; then
+              cp "$collection_dir"*.xpi artifacts/
+            else
+              (
+                cd "$collection_dir"
+                zip -qr "${GITHUB_WORKSPACE}/artifacts/${collection}-${RELEASE_TAG}.zip" .
+              )
+            fi
           done
           ls -la artifacts
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b # v3.0.1
         with:
-          tag_name: v${{ inputs.version }}
-          name: v${{ inputs.version }}
+          tag_name: ${{ steps.release_tag.outputs.tag }}
+          name: ${{ steps.release_tag.outputs.tag }}
           target_commitish: ${{ github.sha }}
-          files: artifacts/*.zip
+          files: artifacts/*
           fail_on_unmatched_files: true

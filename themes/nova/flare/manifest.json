@@ -33,9 +33,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#FFFFFF",
       "sidebar_text": "#1E111B",
-      "sidebar_border": "#FFD5EE",
-      "button_background_hover": "#FFD5EE",
-      "button_background_active": "#FFB0E2",
+      "sidebar_border": "#FFB0E2",
+      "button_background_hover": "#FFB0E2",
+      "button_background_active": "#F585D3",
       "ntp_background": "#F7EFF3"
     },
     "images": {
@@ -79,9 +79,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#1E111B",
       "sidebar_text": "#F7EFF3",
-      "sidebar_border": "#5F1854",
-      "button_background_hover": "#882078",
-      "button_background_active": "#B32E9F",
+      "sidebar_border": "#882078",
+      "button_background_hover": "#B32E9F",
+      "button_background_active": "#DB54BF",
       "ntp_background": "#1E111B"
     },
     "images": {

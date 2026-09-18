@@ -33,9 +33,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#FFFFFF",
       "sidebar_text": "#250E0B",
-      "sidebar_border": "#FFDBC5",
-      "button_background_hover": "#FFDBC5",
-      "button_background_active": "#FEBD99",
+      "sidebar_border": "#FEBD99",
+      "button_background_hover": "#FEBD99",
+      "button_background_active": "#FF9565",
       "ntp_background": "#F8F0EC"
     },
     "images": {
@@ -79,9 +79,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#250E0B",
       "sidebar_text": "#F8F0EC",
-      "sidebar_border": "#701C07",
-      "button_background_hover": "#9C2C05",
-      "button_background_active": "#CD4208",
+      "sidebar_border": "#9C2C05",
+      "button_background_hover": "#CD4208",
+      "button_background_active": "#F4682C",
       "ntp_background": "#250E0B"
     },
     "images": {

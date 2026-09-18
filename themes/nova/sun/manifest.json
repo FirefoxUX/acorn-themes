@@ -33,9 +33,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#FFFFFF",
       "sidebar_text": "#270F00",
-      "sidebar_border": "#FDE8B5",
-      "button_background_hover": "#FDE8B5",
-      "button_background_active": "#FBCC77",
+      "sidebar_border": "#FBCC77",
+      "button_background_hover": "#FBCC77",
+      "button_background_active": "#F3A81E",
       "ntp_background": "#F9F5E6"
     },
     "images": {
@@ -57,7 +57,7 @@
   },
   "dark_theme": {
     "colors": {
-      "frame": "#3E1D00",
+      "frame": "#270F00",
       "frame_inactive": "#4A2E1A",
       "toolbar": "#00000033",
       "toolbar_text": "#F2F0F8",
@@ -79,9 +79,9 @@
       "popup_highlight_text": "#FFFFFF",
       "sidebar": "#270F00",
       "sidebar_text": "#F2F0F8",
-      "sidebar_border": "#3E1D00",
-      "button_background_hover": "#5F3100",
-      "button_background_active": "#854800",
+      "sidebar_border": "#854800",
+      "button_background_hover": "#B26100",
+      "button_background_active": "#DB820E",
       "ntp_background": "#270F00"
     }
   }

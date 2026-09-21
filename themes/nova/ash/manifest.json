@@ -34,8 +34,8 @@
       "sidebar": "#FFFFFF",
       "sidebar_text": "#121114",
       "sidebar_border": "#C7C6CB",
-      "button_background_hover": "#B7B6BA",
-      "button_background_active": "#949297",
+      "button_background_hover": "#67666A40",
+      "button_background_active": "#67666A73",
       "ntp_background": "#FCFBFF"
     },
     "images": {
@@ -80,8 +80,8 @@
       "sidebar": "#1D1B1F",
       "sidebar_text": "#FCFBFF",
       "sidebar_border": "#67666A",
-      "button_background_hover": "#515054",
-      "button_background_active": "#67666A",
+      "button_background_hover": "#B7B6BA66",
+      "button_background_active": "#B7B6BA99",
       "ntp_background": "#121114"
     },
     "images": {

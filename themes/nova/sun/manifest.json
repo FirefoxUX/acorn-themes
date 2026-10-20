@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sun",
-  "version": "1.1",
+  "version": "1.2",
   "browser_specific_settings": {
     "gecko": {
       "id": "nova-sun@mozilla.org"

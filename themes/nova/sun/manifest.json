@@ -83,6 +83,22 @@
       "button_background_hover": "#F3A81E66",
       "button_background_active": "#F3A81E99",
       "ntp_background": "#270F00"
+    },
+    "images": {
+      "additional_backgrounds": [
+        {
+          "linear-gradient": "90deg, #5F3100 0%, #3E1D00 60%, #270F00 100%"
+        }
+      ]
+    },
+    "properties": {
+      "additional_backgrounds_tiling": [
+        "no-repeat"
+      ],
+      "additional_backgrounds_size": [
+        "auto"
+      ],
+      "backgrounds_area": "window"
     }
   }
 }
